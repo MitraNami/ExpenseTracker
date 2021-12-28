@@ -1,8 +1,10 @@
+import { useState } from "react";
+
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
-  const expenses = [
+  const hardCodedExpenses = [
     {
       id: "e1",
       title: "Toilet Paper",
@@ -24,9 +26,19 @@ const App = () => {
     },
   ];
 
+  const [expenses, setExpenses] = useState(hardCodedExpenses);
+
+  const addNewExpense = (newExpenseData) => {
+    const newExpenseDataWithId = {
+      id: Math.random().toString(),
+      ...newExpenseData,
+    };
+    setExpenses((prev) => [newExpenseDataWithId, ...prev]);
+  };
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddnewExpense={addNewExpense} />
       <Expenses items={expenses} />
     </div>
   );
