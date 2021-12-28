@@ -17,6 +17,7 @@ const ExpenseForm = () => {
     evt.preventDefault();
     const expenseData = { ...newExpense, date: new Date(newExpense.date) };
     console.log(expenseData);
+    setNewExpense({ title: "", amount: "", date: "" });
   };
 
   return (
@@ -24,7 +25,12 @@ const ExpenseForm = () => {
       <div className="new-expense__controllers">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" name="title" onChange={handleChange} />
+          <input
+            type="text"
+            name="title"
+            onChange={handleChange}
+            value={newExpense.title}
+          />
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
@@ -34,6 +40,7 @@ const ExpenseForm = () => {
             step="0.01"
             name="amount"
             onChange={handleChange}
+            value={newExpense.amount}
           />
         </div>
         <div className="new-expense__control">
@@ -44,6 +51,7 @@ const ExpenseForm = () => {
             max="2020-12-31"
             name="date"
             onChange={handleChange}
+            value={newExpense.date}
           />
         </div>
       </div>
