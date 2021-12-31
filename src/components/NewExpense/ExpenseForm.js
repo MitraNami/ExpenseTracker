@@ -17,7 +17,11 @@ const ExpenseForm = (props) => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    const expenseData = { ...newExpense, date: new Date(newExpense.date) };
+    const expenseData = {
+      id: Math.random().toString(),
+      ...newExpense,
+      date: new Date(newExpense.date),
+    };
     onAddNewExpense(expenseData);
     setNewExpense({ title: "", amount: "", date: "" });
   };

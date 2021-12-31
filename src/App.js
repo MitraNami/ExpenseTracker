@@ -29,11 +29,7 @@ const App = () => {
   const [expenses, setExpenses] = useState(hardCodedExpenses);
 
   const addNewExpense = (newExpenseData) => {
-    const newExpenseDataWithId = {
-      id: Math.random().toString(),
-      ...newExpenseData,
-    };
-    setExpenses((prev) => [newExpenseDataWithId, ...prev]);
+    setExpenses((prev) => [newExpenseData, ...prev]);
   };
 
   return (
