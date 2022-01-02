@@ -11,12 +11,23 @@ const ExpenseForm = (props) => {
     date: "",
   });
 
+  const [error, setError] = useState(false);
+
   const handleChange = (evt) => {
     setNewExpense((prev) => ({ ...prev, [evt.target.name]: evt.target.value }));
   };
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
+    for (const key of Object.keys(newExpense)) {
+      if (newExpense[key] === "") {
+        setError(true);
+        return;
+      }
+    }
+    // Because you close the ExpenseForm component after passing
+    // the data it's not necessary to reset the error state
+    // setError(false);
     const expenseData = {
       id: Math.random().toString(),
       ...newExpense,
@@ -62,6 +73,7 @@ const ExpenseForm = (props) => {
             value={newExpense.date}
           />
         </div>
+        {error && <div className="error">⚠️All fields must be filled!</div>}
       </div>
       <div className="new-expense__actions">
         <button type="button" onClick={onCloseForm}>
