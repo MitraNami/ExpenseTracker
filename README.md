@@ -71,6 +71,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## Final Product
 
-!["Open the form to add a new expense"] (https://github.com/MitraNami/ExpenseTracker/blob/master/docs/expenses.jpg?raw=true)
+### Open the form to add a new expense
 
-!["Add a new expense"] (https://github.com/MitraNami/ExpenseTracker/blob/master/docs/AddExpense.jpg?raw=true)
+![Open the expense form](https://github.com/MitraNami/ExpenseTracker/blob/master/docs/expenses.jpg?raw=true)
+
+### Add a new expense
+
+![Add a new expense](https://github.com/MitraNami/ExpenseTracker/blob/master/docs/AddExpense.jpg?raw=true)
